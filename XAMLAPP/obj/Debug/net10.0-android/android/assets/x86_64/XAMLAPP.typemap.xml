@@ -1,0 +1,10 @@
+<api type="debug" assembly-name="XAMLAPP" mvid="cc97d83085c14f6cb7dd636062b79df7">
+  <java-to-managed>
+    <entry java-name="crc64d7391df17680cb6f/MainActivity" managed-name="XAMLAPP.MainActivity, XAMLAPP" managed-type-token-id="33554441" />
+    <entry java-name="crc64d7391df17680cb6f/MainApplication" managed-name="XAMLAPP.MainApplication, XAMLAPP" managed-type-token-id="33554442" />
+  </java-to-managed>
+  <managed-to-java>
+    <entry java-name="crc64d7391df17680cb6f/MainActivity" managed-name="XAMLAPP.MainActivity, XAMLAPP" managed-type-token-id="33554441" />
+    <entry java-name="crc64d7391df17680cb6f/MainApplication" managed-name="XAMLAPP.MainApplication, XAMLAPP" managed-type-token-id="33554442" />
+  </managed-to-java>
+</api>

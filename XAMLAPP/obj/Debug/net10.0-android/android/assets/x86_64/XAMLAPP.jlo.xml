@@ -1,0 +1,15 @@
+<api>
+  <jcw-types>
+    <type name="MainActivity" package="crc64d7391df17680cb6f" application_java_class="android.app.Application" mono_runtime_initialization="mono.MonoPackageManager.LoadApplication (context);" extends_type="crc6488302ad6e9e4df1a.MauiAppCompatActivity" partial_assembly_qualified_name="XAMLAPP.MainActivity, XAMLAPP">
+      <constructors>
+        <constructor name="MainActivity" method="n_.ctor:()V:" jni_signature="()V" managed_parameters="" retval="void" is_dynamically_registered="True" />
+        <constructor name="MainActivity" method="n_.ctor:(I)V:" jni_signature="(I)V" managed_parameters="System.Int32, System.Private.CoreLib" params="int p0" retval="void" is_dynamically_registered="True" super_call="p0" activate_call="p0" />
+      </constructors>
+    </type>
+    <type name="MainApplication" package="crc64d7391df17680cb6f" application_java_class="android.app.Application" mono_runtime_initialization="mono.MonoPackageManager.LoadApplication (context);" extends_type="crc6488302ad6e9e4df1a.MauiApplication" is_application="True" partial_assembly_qualified_name="XAMLAPP.MainApplication, XAMLAPP" application_constructor="MainApplication" />
+  </jcw-types>
+  <acw-types partial-assembly-name="XAMLAPP" module-name="XAMLAPP.dll">
+    <type assembly-qualified-name="XAMLAPP.MainActivity, XAMLAPP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" compat-jni-name="xamlapp.MainActivity" java-key="crc64d7391df17680cb6f.MainActivity" managed-key="XAMLAPP.MainActivity" partial-assembly-qualified-name="XAMLAPP.MainActivity, XAMLAPP" />
+    <type assembly-qualified-name="XAMLAPP.MainApplication, XAMLAPP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" compat-jni-name="xamlapp.MainApplication" java-key="crc64d7391df17680cb6f.MainApplication" managed-key="XAMLAPP.MainApplication" partial-assembly-qualified-name="XAMLAPP.MainApplication, XAMLAPP" />
+  </acw-types>
+</api>
