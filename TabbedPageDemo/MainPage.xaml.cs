@@ -7,6 +7,11 @@ public partial class MainPage : TabbedPage
 	public MainPage()
 	{
 		InitializeComponent();
+
+		//setup a new binding with a simple class
+		var simple = new Simple { Name = "John Doe" };
+		this.BindingContext = simple;
+		
 	}
 
 	// private void OnCounterClicked(object? sender, EventArgs e)

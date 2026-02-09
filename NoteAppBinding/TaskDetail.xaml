@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NoteAppBinding.TaskDetail"
+             Title="TaskDetail">
+    <VerticalStackLayout>
+        <HorizontalStackLayout>
+                <Label Text="Name"/>
+                <Label Text="{Binding Name}"/>
+        </HorizontalStackLayout>
+
+        <HorizontalStackLayout>
+            <Label Text="Note"/>
+            <Label Text="{Binding Note}"/>
+        </HorizontalStackLayout>
+
+        <HorizontalStackLayout>
+            <Label Text="Done"/>
+            <Switch IsToggled="{Binding IsDone}"/>
+        </HorizontalStackLayout>
+    
+    </VerticalStackLayout>
+
+
+
+
+</ContentPage>

@@ -19,6 +19,14 @@
                 </x:Arguments>
             </NavigationPage>
 
+            <!--simple tab example-->
+            <ContentPage Title="Simple" IconImageSource="simple.png">
+                <VerticalStackLayout>
+                    <Label Text="{Binding Name}" FontSize="Large"/>
+                    <Label Text="This is a simple tab with a label that is bound to a property in the code behind." FontSize="Medium"/>
+                </VerticalStackLayout>
+            </ContentPage>
+
 
             
             <!--Settings tab-->
