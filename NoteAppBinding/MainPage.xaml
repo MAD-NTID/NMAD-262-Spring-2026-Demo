@@ -5,14 +5,19 @@
              Title="ToDo/Note App">
 
              <VerticalStackLayout>
-                <Entry x:Name="NameNewName" Placeholder="Enter a name" Text="{Binding Name}" />
-                <Entry x:Name="NoteEntry" Placeholder="Enter another note" Text="{Binding Note}" />
+                <Entry  Placeholder="Enter a name" Text="{Binding Name}" />
+                <Entry  Placeholder="Enter another note" Text="{Binding Note}" />
                 <HorizontalStackLayout>
                     <Label Text="Done"/>
                     <Switch x:Name="IsDone" IsToggled="{Binding IsDone}"/>
                 </HorizontalStackLayout>
 
-                <Button Text="Create" Clicked="OnCreateClicked"/>
+                <HorizontalStackLayout>
+                    <Label Text="Character count:"/>
+                    <Label Text="{Binding CharacterCount}"/>
+                </HorizontalStackLayout>
+
+                <Button Text="Create" Clicked="OnCreateClicked" IsEnabled="{Binding IsCreateEnabled}"/>
                 
              </VerticalStackLayout>
 
