@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CollectionViewDemo.CarDetailPage"
+             Title="CarDetailPage">
+
+             <StackLayout Padding="20">
+                <Image 
+                    Source="{Binding ImageUrl}" 
+                    HeightRequest="100" 
+                    Aspect="AspectFill" 
+                    WidthRequest="100"
+                    HorizontalOptions="Center"
+                    Margin="20"
+                    />
+                <Label Text="{Binding Make}" FontAttributes="Bold" FontSize="24"/>
+                <Label Text="{Binding Model}" FontSize="18"/>
+                <Label Text="{Binding Year}" FontSize="18"/>
+                <Label Text="{Binding Cost, StringFormat='Cost: {0:C}'}" FontSize="18"/>
+                <Label Text="{Binding Color}" FontSize="18"/>
+            </StackLayout>
+</ContentPage>

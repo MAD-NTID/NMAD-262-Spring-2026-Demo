@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CollectionViewDemo.AddCarPage"
+             Title="AddCarPage">
+    <VerticalStackLayout>
+        <Label 
+            Text="Welcome to .NET MAUI!"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        <Label Text="Enter the model car: "/>
+        <Entry 
+            Text="{Binding Model}"
+            />
+        <Label Text="Enter the make car: "/>
+        <Entry 
+            Text="{Binding Make}"
+            />
+        <Label Text="Enter the year car: "/>
+        <Entry 
+            Text="{Binding Year}"
+            />
+        <Label Text="Enter the cost car: "/>
+        <Entry 
+            Text="{Binding Cost}"
+            />
+        <Label Text="Enter the car color: "/>
+        <Entry 
+            Text="{Binding Color}"
+            />
+        <Label Text="Enter the image: "/>
+        <Entry 
+            Text="{Binding ImageUrl} "
+            />
+
+        <Button Text="Save Car" Clicked="SaveCar" HorizontalOptions="Fill" Margin="10"/>
+
+    </VerticalStackLayout>
+</ContentPage>
