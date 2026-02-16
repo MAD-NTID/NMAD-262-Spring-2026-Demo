@@ -66,7 +66,8 @@ public partial class MainPage : ContentPage,INotifyPropertyChanged
 			Model = "Mustang GT",
 			Year = 2018,
 			Cost=35000,
-			Color="Grey"
+			Color="Grey",
+			IsNew=false
 		});
 
 		Cars.Add(new Car
@@ -76,7 +77,8 @@ public partial class MainPage : ContentPage,INotifyPropertyChanged
 			Model = "Camaro SS",
 			Year = 2019,
 			Cost=37000,
-			Color="Yellow"
+			Color="Yellow",
+			IsNew=true
 		});
 		 
 
