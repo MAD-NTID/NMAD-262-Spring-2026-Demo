@@ -100,5 +100,40 @@ public partial class MainPage : ContentPage,INotifyPropertyChanged
 		await Navigation.PushAsync(new AddCarPage(Cars));
 	}
 
+	public async void TakePhoto(object? sender, EventArgs e)
+	{
+
+		//check if permission was granted
+		var status = await Permissions.CheckStatusAsync<Permissions.Camera>();
+		if(status != PermissionStatus.Granted)
+		{
+			//if it was not granted, annoy the user
+			status = await Permissions.RequestAsync<Permissions.Camera>();
+			return;
+		}
+
+		//take the picture
+		var result = await MediaPicker.Default.CapturePhotoAsync();
+		//check if the picture was taken or if the user cancelled or something goes wrong
+		if(result == null)
+		{
+			await DisplayAlertAsync("No Photo", "Photo capture was cancelled.", "OK");
+			return;
+		}
+
+		//show the path where the photo was saved
+		await DisplayAlertAsync("Photo Taken", $"Photo saved to {result.FullPath}", "OK");
+
+		// if(result != null)
+		// {
+		// 	var stream = await result.OpenReadAsync();
+		// 	await DisplayAlertAsync("Photo Taken", $"Photo saved to {result.FullPath}", "OK");
+		// }
+		// else
+		// {
+		// 	await DisplayAlertAsync("No Photo", "Photo capture was cancelled.", "OK");
+		// }
+	}
+
 
 }

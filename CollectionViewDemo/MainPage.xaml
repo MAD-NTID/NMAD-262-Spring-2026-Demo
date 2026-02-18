@@ -5,6 +5,7 @@
              x:Class="CollectionViewDemo.MainPage">
 
              <VerticalStackLayout>
+                <Button Text="Take Photo" Clicked="TakePhoto"  HorizontalOptions="Fill" Margin="10" WidthRequest="100"/>
                 <Button Text="Add Car" Clicked="AddNewCarPage"  HorizontalOptions="Fill" Margin="10" WidthRequest="100"/>
                 <!--YOU MUST HAVE SelectionMode="Single" to use SelectedItem!-->
                 <CollectionView
@@ -27,6 +28,8 @@
                     </CollectionView.ItemTemplate>
                 </CollectionView>
              </VerticalStackLayout>
+
+
 
   
 <!-- 
