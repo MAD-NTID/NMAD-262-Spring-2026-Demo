@@ -42,15 +42,17 @@ public static class Storage
 
     //use the streamwriter to write to the file
     StreamWriter writer = new StreamWriter(filePath);
-
+    
     //convert the cars objects to a JSON string representation
     string jsonCars = JsonConvert.SerializeObject(cars);
     
-    writer.WriteAsync(jsonCars);
-    writer.FlushAsync();
+    await writer.WriteAsync(jsonCars);
+    await writer.FlushAsync();
 
     //close the writer when you are done
     writer.Close();
+
+   
         
   }
 }
