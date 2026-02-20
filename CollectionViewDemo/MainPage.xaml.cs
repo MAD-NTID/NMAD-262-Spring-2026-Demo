@@ -59,33 +59,53 @@ public partial class MainPage : ContentPage,INotifyPropertyChanged
 		// Cars.Add(chevy);
 
 		//simpify
-		Cars.Add(new Car
-		{
-			ImageUrl = "https://e7.pngegg.com/pngimages/575/847/png-clipart-ford-ranger-ford-everest-ford-motor-company-car-ford-car-pickup-truck.png",
-			Make = "Ford",
-			Model = "Mustang GT",
-			Year = 2018,
-			Cost=35000,
-			Color="Grey",
-			IsNew=false
-		});
+		// Cars.Add(new Car
+		// {
+		// 	ImageUrl = "https://e7.pngegg.com/pngimages/575/847/png-clipart-ford-ranger-ford-everest-ford-motor-company-car-ford-car-pickup-truck.png",
+		// 	Make = "Ford",
+		// 	Model = "Mustang GT",
+		// 	Year = 2018,
+		// 	Cost=35000,
+		// 	Color="Grey",
+		// 	IsNew=false
+		// });
 
-		Cars.Add(new Car
-		{
-			ImageUrl = "https://e7.pngegg.com/pngimages/925/433/png-clipart-yellow-chevrolet-coupe-chevrolet-camaro-car-chevrolet-chevelle-chevrolet-tahoe-yellow-camaro-hd-performance-car-vehicle-thumbnail.png",
-			Make = "Chevrolet",
-			Model = "Camaro SS",
-			Year = 2019,
-			Cost=37000,
-			Color="Yellow",
-			IsNew=true
-		});
+		// Cars.Add(new Car
+		// {
+		// 	ImageUrl = "https://e7.pngegg.com/pngimages/925/433/png-clipart-yellow-chevrolet-coupe-chevrolet-camaro-car-chevrolet-chevelle-chevrolet-tahoe-yellow-camaro-hd-performance-car-vehicle-thumbnail.png",
+		// 	Make = "Chevrolet",
+		// 	Model = "Camaro SS",
+		// 	Year = 2019,
+		// 	Cost=37000,
+		// 	Color="Yellow",
+		// 	IsNew=true
+		// });
 		 
 
 		BindingContext = this;
 
 		
 	}
+
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
+
+
+		MainThread.BeginInvokeOnMainThread(async () =>
+		{
+			//clear out any previous cars
+			Cars.Clear();
+
+			List<Car> carsFromStorage = await Storage.LoadAsync();
+
+			//loop through list of cars from the storage and add them to the observable cars
+			foreach(Car car in carsFromStorage)
+			{
+				Cars.Add(car);
+			}
+		});
+    }
 
 	private async void NavigateToCarDetail(Car car)
 	{

@@ -34,6 +34,9 @@ public partial class AddCarPage : ContentPage
 		}
 
 		cars.Add(car);
+
+		//update the storage with the new list of cars
+		await Storage.Save(cars.ToList());
 		await Navigation.PopAsync();
 		
 	}
