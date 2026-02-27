@@ -15,7 +15,7 @@
                     >
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
-                            <StackLayout Orientation="Horizontal" Padding="10">
+                            <!--<StackLayout Orientation="Horizontal" Padding="10">
                                 <Image Source="{Binding ImageUrl}" WidthRequest="100" HeightRequest="60" Aspect="AspectFill"/>
                                 <StackLayout Orientation="Vertical" Margin="10,0">
                                     <Label Text="{Binding Make}" FontAttributes="Bold"/>
@@ -23,7 +23,14 @@
                                     <Label Text="{Binding Year}"/>
                                     <Label Text="{Binding IsNew, Converter={converter:CarStatusConverter}}"/>
                                 </StackLayout>
-                            </StackLayout>
+                            </StackLayout>-->
+                            <Grid ColumnDefinitions="Auto,*, *"
+                                  RowDefinitions="Auto,Auto">
+                                  <Image Source="{Binding ImageUrl}" WidthRequest="100" HeightRequest="60" Aspect="AspectFill"/>
+                                  <Label Grid.Column="1" Text="{Binding Make}" FontAttributes="Bold"/>
+                                  <Label Grid.Column="1" Grid.Row="1" Text="{Binding Model}"/>
+                                  <Label Grid.Column="2" Text="{Binding IsNew, Converter={converter:CarStatusConverter}}"/>
+                            </Grid>
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
                 </CollectionView>
