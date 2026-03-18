@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BaseBallStudent.PlayerDetails"
+             Title="PlayerDetails">
+    <VerticalStackLayout>
+            <StackLayout>
+                <Image Source="{Binding ImageURL}" WidthRequest="200" Margin="10,12"/>
+                <Label Text="Name: "/>
+                <Label Text="{Binding Name}"/>
+
+                <Label Text="Team: "/>
+                <Label Text="{Binding Team}"/>
+
+
+                <Label Text="Jersey Number: "/>
+                <Label Text="{Binding JerseyNumber}"/>
+
+            <StackLayout x:Name="Pitcher" IsVisible="False">   
+                <Label Text="{Binding Wins}"/>
+                <Label Text="{Binding StrikeOut}"/>
+            </StackLayout>
+
+            <StackLayout x:Name="Batter" IsVisible="False">
+                <Label Text="{Binding BetterAvg}"/>
+                <Label Text="{Binding HomeRuns}"/>
+            </StackLayout>
+            </StackLayout>
+    </VerticalStackLayout>
+</ContentPage>
