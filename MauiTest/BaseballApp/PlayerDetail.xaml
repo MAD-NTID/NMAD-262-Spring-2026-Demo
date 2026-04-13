@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BaseballApp.PlayerDetail">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="15" Spacing="15">
+
+            <!-- Back Button -->
+            <Button Text="Back to Player List"
+                    Clicked="OnBackButtonClicked"
+                    HorizontalOptions="Start"/>
+
+            <!-- Header -->
+            <Label Text="Player Details"
+                   HorizontalOptions="Center"
+                   FontSize="24"
+                   FontAttributes="Bold" />
+
+            <!-- Top Section: Image + Basic Info -->
+            <HorizontalStackLayout Spacing="15">
+
+                <!-- Player Image -->
+                <Image Source="{Binding Player.ImageUrl}"
+                       HeightRequest="100"
+                       WidthRequest="100" />
+
+                <!-- Name + Team -->
+                <VerticalStackLayout VerticalOptions="Center">
+                    <Label Text="{Binding Player.Name}"
+                           FontSize="20"
+                           FontAttributes="Bold"/>
+                    <Label Text="{Binding Player.Team}"
+                           FontSize="16"/>
+                </VerticalStackLayout>
+
+            </HorizontalStackLayout>
+
+            <!-- Batter Stats -->
+            <VerticalStackLayout IsVisible="{Binding IsBatter}" Spacing="5">
+                <Label Text="Batting Stats"
+                       FontSize="18"
+                       FontAttributes="Bold"/>
+
+                <Label Text="{Binding Player.BattingAverage, StringFormat='Batting Average: {0:F3}'}"/>
+                <Label Text="{Binding Player.HomeRuns, StringFormat='Home Runs: {0}'}"/>
+                <Label Text="{Binding Player.RBIs, StringFormat='RBIs: {0}'}"/>
+            </VerticalStackLayout>
+
+            <!-- Pitcher Stats -->
+            <VerticalStackLayout IsVisible="{Binding IsPitcher}" Spacing="5">
+                <Label Text="Pitching Stats"
+                       FontSize="18"
+                       FontAttributes="Bold"/>
+
+                <Label Text="{Binding Player.ERA, StringFormat='ERA: {0:F2}'}"/>
+                <Label Text="{Binding Player.Strikeouts, StringFormat='Strikeouts: {0}'}"/>
+                <Label Text="{Binding Player.PitchSpeed, StringFormat='Pitch Speed: {0} mph'}"/>
+            </VerticalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BaseballApp.AddNewPlayer"
+             Title="Add New Player">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+
+            <!-- Header -->
+            <Label Text="Add New Player"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"/>
+
+            <!-- Name -->
+            <Entry Placeholder="Player Name"
+                   Text="{Binding Player.Name}" />
+
+            <!-- Team -->
+            <Entry Placeholder="Team"
+                   Text="{Binding Player.Team}" />
+
+            <!-- Image -->
+            <Entry Placeholder="Image URL"
+                   Text="{Binding Player.ImageUrl}" />
+
+            <!-- Player Type Picker -->
+            <Picker Title="Select Player Type"
+                    SelectedItem="{Binding SelectedPlayerType}">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Batter</x:String>
+                        <x:String>Pitcher</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <!-- Batter Fields -->
+            <VerticalStackLayout IsVisible="{Binding IsBatter}" Spacing="10">
+                <Label Text="Batting Stats" FontAttributes="Bold" />
+
+                <HorizontalStackLayout Spacing="10">
+                    <Label Text="Batting Average:" VerticalOptions="Center" WidthRequest="120"/>
+                    <Entry Text="{Binding Player.BattingAverage}" Keyboard="Numeric" HorizontalOptions="FillAndExpand"/>
+                </HorizontalStackLayout>
+
+                <HorizontalStackLayout Spacing="10">
+                    <Label Text="Home Runs:" VerticalOptions="Center" WidthRequest="120"/>
+                    <Entry Text="{Binding Player.HomeRuns}" Keyboard="Numeric" HorizontalOptions="FillAndExpand"/>
+                </HorizontalStackLayout>
+
+                <HorizontalStackLayout Spacing="10">
+                    <Label Text="RBIs:" VerticalOptions="Center" WidthRequest="120"/>
+                    <Entry Text="{Binding Player.RBIs}" Keyboard="Numeric" HorizontalOptions="FillAndExpand"/>
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+
+            <!-- Pitcher Fields -->
+            <VerticalStackLayout IsVisible="{Binding IsPitcher}" Spacing="10">
+                <Label Text="Pitching Stats" FontAttributes="Bold" />
+
+                <HorizontalStackLayout Spacing="10">
+                    <Label Text="ERA:" VerticalOptions="Center" WidthRequest="120"/>
+                    <Entry Text="{Binding Player.ERA}" Keyboard="Numeric" HorizontalOptions="FillAndExpand"/>
+                </HorizontalStackLayout>
+
+                <HorizontalStackLayout Spacing="10">
+                    <Label Text="Strikeouts:" VerticalOptions="Center" WidthRequest="120"/>
+                    <Entry Text="{Binding Player.Strikeouts}" Keyboard="Numeric" HorizontalOptions="FillAndExpand"/>
+                </HorizontalStackLayout>
+
+                <HorizontalStackLayout Spacing="10">
+                    <Label Text="Pitch Speed:" VerticalOptions="Center" WidthRequest="120"/>
+                    <Entry Text="{Binding Player.PitchSpeed}" Keyboard="Numeric" HorizontalOptions="FillAndExpand"/>
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+
+            <!-- Save Button -->
+            <Button Text="Add Player"
+                    Clicked="OnAddPlayerClicked"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
